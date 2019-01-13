@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class HelloController {
     @RequestMapping("/hello")
-    public String index(@RequestParam String name){
-        return "hello" + name + "this is the first eureka provider";
+    public String index(@RequestParam(defaultValue = "nobody") String name){
+        return "hello " + name + "! this is the first eureka provider";
     }
 }
